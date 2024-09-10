@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Veja se o numero é impar ou Par</title>
+</head>
+<body>
+    <h2>Veja se o numero é impar ou Par</h2>
+    
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="verificarParOuImpar()">Verificar</button>
+    <p id="resultado"></p>
+    <script>
+        function verificarParOuImpar() {
+            let numero = document.getElementById('numero').value;
+            
+            if (numero === '') {
+                alert('Por favor, insira um número!');
+                return;
+            }
+
+            if (numero % 2 === 0) {
+                alert(`${numero} é Par`);
+            } else {
+                alert(`${numero} é Ímpar`);
+            }
+        }
+    </script>
+</body>
+</html>

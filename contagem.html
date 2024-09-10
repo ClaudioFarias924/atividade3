@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contador {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Contagem Regressiva</h2>
+    <div id="contador">10</div>
+    <button onclick="iniciarContagem()">Iniciar Contagem</button>
+
+    <script>
+        let tempoRestante = 10;
+        let intervalo;
+
+        function iniciarContagem() {
+            if (intervalo) {
+                clearInterval(intervalo);
+            }
+            tempoRestante = 10;
+            document.getElementById("contador").innerHTML = tempoRestante;
+
+            intervalo = setInterval(function() {
+                tempoRestante--;
+                document.getElementById("contador").innerHTML = tempoRestante;
+
+                if (tempoRestante <= 0) {
+                    clearInterval(intervalo);
+                    alert("Tempo esgotado!");
+                }
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
